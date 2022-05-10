@@ -28,9 +28,10 @@ body {
     color: white;
     display: flex;
     min-height: 100vh;
+    min-width: 100vw;
 }
 
-/* main configurations */
+/* main */
 
 main {
     width: 50vw;
@@ -47,7 +48,7 @@ h1 {
     margin-top: 0.3em;
 }
 
-/* main -> social-media configurations */
+/* main -> social-media */
 
 main .social-media {
     display: flex;
@@ -67,7 +68,7 @@ main .social-media a:first-child img { /* I can use last-child or nth-child too 
     margin-left: 0;
 }
 
-/* main -> alternative configurations */
+/* main -> alternative */
 
 main .alternative {
     margin-top: 1em;
@@ -94,7 +95,7 @@ main .alternative span::after {
     left: 50px;
 }
 
-/* main -> form configurations */
+/* main -> form */
 
 main form {
     display: flex;
@@ -141,15 +142,19 @@ main form input[type="submit"]:hover {
     background: #413baf;
 }
 
-/* section configurations */
+/* section */
 
 section.images {
+    width: 50vw;
     display: flex;
     align-items: flex-end;
+    justify-content: flex-end;
 }
 
 section.images img{
-    width: 90%;
+    width: 70%;
+    margin-bottom: 3em;
+    margin-right: 6em;
 }
 
 section.images .circle {
@@ -159,6 +164,38 @@ section.images .circle {
     top: 0;
     left: 0;
     background: linear-gradient(45deg, #E8CBC0, #636FA4);
-    clip-path: circle(40% at right 80%); /* ****STUDY**** */
-    z-index: -1; /* behind -> Só funciona com position */ /* ****STUDY**** */
+    clip-path: circle(40% at right 85%); /* lets you clip an element to a shape */
+    z-index: -1; /* behind -> I need to set a position */}
+
+/* Media */
+
+@media only screen and (min-width: 900px) and (max-width:1200px) {
+    section.images img {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    section.images {
+        display: none;
+        visibility: hidden;
+    }
+
+    main {
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    main .alternative span {
+        font-size: 0.8em;
+    }
+
+    main form input[type="submit"] {
+        font-size: 1.1em;
+    }
 }
